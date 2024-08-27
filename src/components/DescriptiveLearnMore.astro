@@ -1,0 +1,62 @@
+---
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+	link: string,
+    description: string,
+}
+
+const { link, description } = Astro.props;
+---
+<!-- add bottom-hidden -->
+<div class=`learn-more-container bottom-hidden`>
+    <p>
+        {description}
+    </p>
+	<Button href={link}>
+        learn More
+		<Icon icon="arrow-right" size="1.2em" />
+    </Button>
+</div>
+
+<style>
+    .learn-more-container {
+		background: var(--gray-999);
+		color: var(--gray-200);
+		border-radius: 0.5rem;
+		transition: 0.4s ease-out;
+		grid-area: 2 / 2 / 3 / 3;
+		z-index: 1;
+		margin: 0.5rem;
+		padding: 0.5rem 1rem;
+        justify-self: center;
+        align-self: end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.56em;
+        width: 70%;
+        min-height: 0;
+        max-height: 90%;
+    }
+
+	.bottom-hidden {
+		display: relative;
+		transform: translateY(150%);
+	}
+
+    p {
+        width: 100%;
+		place-content: center;
+		text-align: center;
+        font-size: var(--text-md);
+        min-height: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3; /* Change this value to the number of lines you want to show */
+    }
+
+</style>
