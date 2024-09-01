@@ -51,6 +51,11 @@ const { variant } = Astro.props;
 			transform: none;
 		}
 
+        .grid.one-item > :global(:only-child) {
+            grid-column: 1 / 2; /* Span both columns */
+        }
+
+
 		.grid.small {
 			display: flex;
 			flex-wrap: wrap;

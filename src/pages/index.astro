@@ -17,15 +17,6 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
 const projects = (await getCollection('work'))
-    .sort((a, b) => {
-        if (a.data.type === "work" && b.data.type !== "work") {
-            return 1;
-        }
-        if (a.data.type !== "work" && b.data.type === "work") {
-            return -1;
-        }
-        return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
-    })
     .slice(0, 4);
 
 // Full Astro Component Syntax:
@@ -38,7 +29,7 @@ const projects = (await getCollection('work'))
 			<header class="hero">
 				<Hero
 					title="Hello, my name is Kaushal Damania"
-					tagline="I am a Creative Developer who is currently based in New York City."
+					tagline="I am a Software Developer who is currently based in New York City."
 					align="start"
 				>
 					<div class="roles">
@@ -49,10 +40,10 @@ const projects = (await getCollection('work'))
 				</Hero>
 
 				<img
-					alt="Placeholder to be replaced by my picture"
+					alt="Kaushal Damania at the Mets stadium"
 					width="480"
 					height="620"
-					src="/assets/portrait.webp"
+					src="/assets/Kaushal.jpeg"
 				/>
 			</header>
 
