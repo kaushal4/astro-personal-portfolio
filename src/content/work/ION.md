@@ -1,6 +1,6 @@
 ---
 title: ION Group
-publishDate: 2019-12-01 00:00:00
+publishDate: 2024-06-30 00:00:00
 img: /assets/ion.png
 img_alt: ION Group Logo
 type: work
